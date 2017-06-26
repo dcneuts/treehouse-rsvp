@@ -50,10 +50,11 @@ UL.addEventListener('change', () => {
 UL.addEventListener('click', (e) => {
 	// To stop the edit button from being triggered due to it's position in the DOM
 	if (e.target.tagName === 'BUTTON') {
-		if (e.target.textContent === 'remove') {
-			const LI = e.target.parentNode;
-			const UL = LI.parentNode;
+		const BUTTON = e.target;
+		const LI = BUTTON.parentNode;
+		const UL = LI.parentNode;
+		if (BUTTON.textContent === 'remove') {
 			UL.removeChild(LI);
-		}
+		} else if (BUTTON.textContent === 'edit') {
 	}
-});
+}});
