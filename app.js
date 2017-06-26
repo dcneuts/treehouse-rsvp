@@ -38,3 +38,11 @@ UL.addEventListener('change', () => {
 		LISTITEM.className = '';
 	}
 });
+
+UL.addEventListener('click', (e) => {
+	if (e.target.tagName === 'BUTTON') {
+		const LI = e.target.parentNode;
+		const UL = LI.parentNode;
+		UL.removeChild(LI);
+	}
+});
