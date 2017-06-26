@@ -5,11 +5,7 @@ const FORM = document.getElementById('registrar');
 const INPUT = FORM.querySelector('input');
 const UL = document.getElementById('invitedList');
 
-// Event handler to add people to list on button press
-FORM.addEventListener('submit', (e) => {
-	e.preventDefault();
-	const TEXT = INPUT.value;
-	INPUT.value = "";
+function createLI(TEXT) {
 	const LI = document.createElement('li');
 	LI.textContent = TEXT;
 	const LABEL = document.createElement('label');
@@ -18,11 +14,18 @@ FORM.addEventListener('submit', (e) => {
 	CHECKBOX.type = 'checkbox';
 	LABEL.appendChild(CHECKBOX);
 	LI.appendChild(LABEL);
-	
 	const BUTTON = document.createElement('button');
 	BUTTON.textContent = 'remove';
 	LI.appendChild(BUTTON);
-	
+	return LI;
+}
+
+// Event handler to add people to list on button press
+FORM.addEventListener('submit', (e) => {
+	e.preventDefault();
+	const TEXT = INPUT.value;
+	INPUT.value = "";
+	const LI = createLI(TEXT);
 	UL.appendChild(LI);
 });
 
