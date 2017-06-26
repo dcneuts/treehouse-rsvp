@@ -5,6 +5,7 @@ const FORM = document.getElementById('registrar');
 const INPUT = FORM.querySelector('input');
 const UL = document.getElementById('invitedList');
 
+// Event handler to add people to list on button press
 FORM.addEventListener('submit', (e) => {
 	e.preventDefault();
 	const TEXT = INPUT.value;
@@ -17,9 +18,15 @@ FORM.addEventListener('submit', (e) => {
 	CHECKBOX.type = 'checkbox';
 	LABEL.appendChild(CHECKBOX);
 	LI.appendChild(LABEL);
+	
+	const BUTTON = document.createElement('button');
+	BUTTON.textContent = 'remove';
+	LI.appendChild(BUTTON);
+	
 	UL.appendChild(LI);
 });
 
+// Event handler to change styles
 UL.addEventListener('change', () => {
 	const CHECKBOX = event.target;
 	const CHECKED = CHECKBOX.checked;
