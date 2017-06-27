@@ -61,6 +61,7 @@ UL.addEventListener('click', (e) => {
 			const SPAN = LI.firstElementChild;
 			const INPUT = document.createElement('input');
 			INPUT.type = 'text';
+			INPUT.value = SPAN.textContent;
 			LI.insertBefore(INPUT, SPAN);
 			LI.removeChild(SPAN);
 	}
