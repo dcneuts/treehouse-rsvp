@@ -64,5 +64,6 @@ UL.addEventListener('click', (e) => {
 			INPUT.value = SPAN.textContent;
 			LI.insertBefore(INPUT, SPAN);
 			LI.removeChild(SPAN);
+			BUTTON.textContent =  "save";
 	}
 }});
