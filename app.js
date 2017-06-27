@@ -3,7 +3,38 @@
  */
 const FORM  = document.getElementById('registrar');
 const INPUT = FORM.querySelector('input');
+
+const MAINDIV = document.querySelector('.main');
 const UL    = document.getElementById('invitedList');
+
+const DIV = document.createElement('div');
+const FILTERLABEL = document.createElement('label');
+const FILTERCHECKBOX = document.createElement('input');
+
+FILTERLABEL.textContent = "Hide those who haven't responded";
+FILTERCHECKBOX.type = 'checkbox';
+DIV.appendChild(FILTERLABEL);
+DIV.appendChild(FILTERCHECKBOX);
+MAINDIV.insertBefore(DIV, UL);
+FILTERCHECKBOX.addEventListener('change', (e) => {
+	const ISCHECKED = e.target.checked;
+	const LIS = UL.children;
+	if (ISCHECKED) {
+		for (let i = 0; i < LIS.length; i += 1) {
+			let LI = LIS[i];
+			if (LI.className === 'responded') {
+				LI.style.display = '';
+			} else {
+				LI.style.display = 'none';
+			}
+		}
+	} else {
+		for (let i = 0; i < LIS.length; i += 1) {
+			let LI = LIS[i];
+			LI.style.display = '';
+		}
+	}
+});
 
 function createLI(TEXT) {
 	const LI         = document.createElement('li');
