@@ -1,6 +1,8 @@
 /**
  * Created by derek on 6/25/17.
  */
+document.addEventListener('DOMContentLoaded', () => {
+
 const FORM  = document.getElementById('registrar');
 const INPUT = FORM.querySelector('input');
 
@@ -105,4 +107,5 @@ UL.addEventListener('click', (e) => {
 			BUTTON.textContent = "edit";
 		}
 	}
+});
 });
