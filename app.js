@@ -7,7 +7,9 @@ const UL = document.getElementById('invitedList');
 
 function createLI(TEXT) {
 	const LI = document.createElement('li');
-	LI.textContent = TEXT;
+	const SPAN = document.createElement('span');
+	SPAN.textContent = TEXT;
+	LI.appendChild(SPAN);
 	const LABEL = document.createElement('label');
 	LABEL.textContent = 'Confirmed';
 	const CHECKBOX = document.createElement('input');
