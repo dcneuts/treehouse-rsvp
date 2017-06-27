@@ -58,5 +58,10 @@ UL.addEventListener('click', (e) => {
 		if (BUTTON.textContent === 'remove') {
 			UL.removeChild(LI);
 		} else if (BUTTON.textContent === 'edit') {
+			const SPAN = LI.firstElementChild;
+			const INPUT = document.createElement('input');
+			INPUT.type = 'text';
+			LI.insertBefore(INPUT, SPAN);
+			LI.removeChild(SPAN);
 	}
 }});
